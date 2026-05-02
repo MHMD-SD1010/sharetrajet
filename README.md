@@ -1,8 +1,8 @@
-# 🚗 DZ-CarPool - Documentation Base de Données
+# 🚗 share_trajet - Documentation Base de Données
 
 ## 📋 Vue d'ensemble
 
-Cette documentation décrit la structure de la base de données PostgreSQL pour l'application DZ-CarPool et fournit les scripts SQL d'initialisation et de seeding.
+Cette documentation décrit la structure de la base de données PostgreSQL pour l'application share_trajet et fournit les scripts SQL d'initialisation et de seeding.
 
 ## 📁 Structure des fichiers SQL
 
@@ -319,4 +319,4 @@ Pour toute question sur la structure de la base de données:
 
 ## 📄 License
 
-Ce schéma de base de données est conçu pour le projet DZ-CarPool.
+Ce schéma de base de données est conçu pour le projet share_trajet.
