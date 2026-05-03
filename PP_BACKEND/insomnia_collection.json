@@ -1,0 +1,148 @@
+{
+  "name": "DZ-CarPool API",
+  "baseUrl": "http://localhost:8000",
+  "variables": {
+    "base_url": "http://localhost:8000",
+    "access_token": "",
+    "user_id": ""
+  },
+  "requests": [
+    {
+      "name": "1. Register User",
+      "method": "POST",
+      "url": "{{base_url}}/api/v1/users/register/",
+      "headers": {
+        "Content-Type": "application/json"
+      },
+      "body": {
+        "email": "test@dzcarpool.com",
+        "password": "Test123456!",
+        "password_confirm": "Test123456!",
+        "first_name": "Ahmed",
+        "last_name": "Benali",
+        "phone_number": "0555123456"
+      }
+    },
+    {
+      "name": "2. Login User",
+      "method": "POST",
+      "url": "{{base_url}}/api/v1/users/login/",
+      "headers": {
+        "Content-Type": "application/json"
+      },
+      "body": {
+        "email": "test@dzcarpool.com",
+        "password": "Test123456!"
+      },
+      "tests": "pm.environment.set('access_token', pm.response.json().tokens.access);"
+    },
+    {
+      "name": "3. Get My Profile",
+      "method": "GET",
+      "url": "{{base_url}}/api/v1/users/me/",
+      "headers": {
+        "Authorization": "Bearer {{access_token}}",
+        "Content-Type": "application/json"
+      }
+    },
+    {
+      "name": "4. Create Trajet",
+      "method": "POST",
+      "url": "{{base_url}}/api/v1/trajets/",
+      "headers": {
+        "Authorization": "Bearer {{access_token}}",
+        "Content-Type": "application/json"
+      },
+      "body": {
+        "ville_depart": "Alger",
+        "ville_arrivee": "Oran",
+        "adresse_depart": "Bab El Oued, Alger",
+        "adresse_arrivee": "Centre-ville, Oran",
+        "date": "2025-12-31",
+        "heure_depart": "08:00",
+        "nbr_places": 4,
+        "price": 1500.00,
+        "distance": 450,
+        "description": "Trajet confortable, départ matinal",
+        "is_confort": false,
+        "luggage_allowed": true
+      }
+    },
+    {
+      "name": "5. Search Trajets",
+      "method": "POST",
+      "url": "{{base_url}}/api/v1/trajets/search/",
+      "headers": {
+        "Content-Type": "application/json"
+      },
+      "body": {
+        "ville_depart": "Alger",
+        "ville_arrivee": "Oran",
+        "date": "2025-12-31",
+        "nbr_places": 2
+      }
+    },
+    {
+      "name": "6. List Trajets",
+      "method": "GET",
+      "url": "{{base_url}}/api/v1/trajets/?ville_depart=Alger&date_min=2025-12-01",
+      "headers": {
+        "Content-Type": "application/json"
+      }
+    },
+    {
+      "name": "7. Create Reservation",
+      "method": "POST",
+      "url": "{{base_url}}/api/v1/reservations/",
+      "headers": {
+        "Authorization": "Bearer {{access_token}}",
+        "Content-Type": "application/json"
+      },
+      "body": {
+        "trajet": 1,
+        "nbr_places": 2
+      }
+    },
+    {
+      "name": "8. My Reservations",
+      "method": "GET",
+      "url": "{{base_url}}/api/v1/reservations/my_reservations/",
+      "headers": {
+        "Authorization": "Bearer {{access_token}}",
+        "Content-Type": "application/json"
+      }
+    },
+    {
+      "name": "9. Approve Reservation",
+      "method": "POST",
+      "url": "{{base_url}}/api/v1/reservations/1/approve/",
+      "headers": {
+        "Authorization": "Bearer {{access_token}}",
+        "Content-Type": "application/json"
+      }
+    },
+    {
+      "name": "10. Send Message",
+      "method": "POST",
+      "url": "{{base_url}}/api/v1/messaging/messages/",
+      "headers": {
+        "Authorization": "Bearer {{access_token}}",
+        "Content-Type": "application/json"
+      },
+      "body": {
+        "receiver": 2,
+        "trajet": 1,
+        "text": "Bonjour, à quelle heure exacte partez-vous ?"
+      }
+    },
+    {
+      "name": "11. Get Notifications",
+      "method": "GET",
+      "url": "{{base_url}}/api/v1/notifications/",
+      "headers": {
+        "Authorization": "Bearer {{access_token}}",
+        "Content-Type": "application/json"
+      }
+    }
+  ]
+}

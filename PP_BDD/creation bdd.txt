@@ -1,0 +1,3 @@
+# Installation complète en une commande
+createdb dzcarpool
+psql -U postgres -d dzcarpool -f 00_init_complete_database.sql

@@ -1,0 +1,121 @@
+{
+  "last_updated": "2024-12-21",
+  "wilayas": {
+    "01": {
+      "name": "Adrar",
+      "prices": {
+        "essence_sans_plomb": 48.50,
+        "gasoil": 35.00,
+        "gpl": 10.00
+      }
+    },
+    "16": {
+      "name": "Alger",
+      "prices": {
+        "essence_sans_plomb": 51.58,
+        "gasoil": 36.13,
+        "gpl": 10.50
+      }
+    },
+    "31": {
+      "name": "Oran",
+      "prices": {
+        "essence_sans_plomb": 50.95,
+        "gasoil": 35.80,
+        "gpl": 10.25
+      }
+    },
+    "25": {
+      "name": "Constantine",
+      "prices": {
+        "essence_sans_plomb": 50.20,
+        "gasoil": 35.50,
+        "gpl": 10.15
+      }
+    },
+    "09": {
+      "name": "Blida",
+      "prices": {
+        "essence_sans_plomb": 51.30,
+        "gasoil": 36.00,
+        "gpl": 10.40
+      }
+    },
+    "13": {
+      "name": "Tlemcen",
+      "prices": {
+        "essence_sans_plomb": 50.50,
+        "gasoil": 35.60,
+        "gpl": 10.20
+      }
+    },
+    "19": {
+      "name": "Sétif",
+      "prices": {
+        "essence_sans_plomb": 50.10,
+        "gasoil": 35.40,
+        "gpl": 10.10
+      }
+    },
+    "06": {
+      "name": "Béjaïa",
+      "prices": {
+        "essence_sans_plomb": 50.80,
+        "gasoil": 35.70,
+        "gpl": 10.30
+      }
+    },
+    "23": {
+      "name": "Annaba",
+      "prices": {
+        "essence_sans_plomb": 50.40,
+        "gasoil": 35.55,
+        "gpl": 10.18
+      }
+    },
+    "10": {
+      "name": "Bouira",
+      "prices": {
+        "essence_sans_plomb": 50.60,
+        "gasoil": 35.65,
+        "gpl": 10.22
+      }
+    },
+    "11": {
+      "name": "Tamanrasset",
+      "prices": {
+        "essence_sans_plomb": 47.80,
+        "gasoil": 34.50,
+        "gpl": 9.80
+      }
+    },
+    "30": {
+      "name": "Ouargla",
+      "prices": {
+        "essence_sans_plomb": 48.20,
+        "gasoil": 34.70,
+        "gpl": 9.90
+      }
+    },
+    "47": {
+      "name": "Ghardaïa",
+      "prices": {
+        "essence_sans_plomb": 48.90,
+        "gasoil": 34.90,
+        "gpl": 9.95
+      }
+    }
+  },
+  "consommation_moyenne": {
+    "essence_sans_plomb": 7.5,
+    "gasoil": 6.5,
+    "gpl": 8.5,
+    "electrique": 0.18
+  },
+  "notes": {
+    "essence_sans_plomb": "Prix par litre en DZD",
+    "gasoil": "Prix par litre en DZD",
+    "gpl": "Prix par litre en DZD",
+    "electrique": "Prix par kWh en DZD (consommation en kWh/100km au lieu de L/100km)"
+  }
+}
