@@ -3,6 +3,14 @@
 -- Jeu de données de test cohérent et complet
 -- ================================================
 
+-- Rendre le script rejouable en local/test
+TRUNCATE TABLE ratings, reservations, notifications, messagerie,
+               conversations_participants, conversations, trajet_etapes,
+               trajets_preferences, trajets, fuel_prices, users_preferences,
+               user_documents, refresh_tokens, email_verifications,
+               phone_verifications, users, preferences, roles
+RESTART IDENTITY CASCADE;
+
 -- ========================================
 -- 1. RÔLES
 -- ========================================
@@ -226,30 +234,22 @@ UPDATE trajets SET places_disponibles = 1 WHERE id = 6;
 -- ========================================
 -- 10. ÉVALUATIONS (RATINGS)
 -- ========================================
--- Évaluations pour le trajet 8 (complété)
+-- IMPORTANT:
+-- La table ratings impose reservation_id UNIQUE (via OneToOne Django).
+-- Donc une seule évaluation par réservation.
 INSERT INTO ratings (reservation_id, rater_id, rated_id, note, comment, ponctualite, convivialite, conduite, created_at) VALUES
 -- Amina note Karim (conducteur)
 (7, 7, 2, 5, 'Excellent conducteur, très ponctuel et agréable. Trajet très confortable!', 5, 5, 5, CURRENT_DATE - INTERVAL '9 days'),
--- Karim note Amina (passagère)
-(7, 2, 7, 5, 'Passagère très sympathique et ponctuelle. Recommandé!', 5, 5, NULL, CURRENT_DATE - INTERVAL '9 days'),
 -- Riad note Karim
 (8, 8, 2, 5, 'Conduite sécurisée, bonne ambiance!', 5, 4, 5, CURRENT_DATE - INTERVAL '9 days'),
--- Karim note Riad
-(8, 2, 8, 5, 'Passager agréable, à recommander', 5, 5, NULL, CURRENT_DATE - INTERVAL '9 days');
-
--- Évaluations pour le trajet 9
-INSERT INTO ratings (reservation_id, rater_id, rated_id, note, comment, ponctualite, convivialite, conduite) VALUES
 -- Leila note Fatima
-(9, 9, 3, 5, 'Excellente conductrice, très professionnelle', 5, 5, 5),
--- Fatima note Leila
-(9, 3, 9, 5, 'Passagère parfaite!', 5, 5, NULL);
-
--- Évaluations pour le trajet 10
-INSERT INTO ratings (reservation_id, rater_id, rated_id, note, comment, ponctualite, convivialite, conduite) VALUES
+(9, 9, 3, 5, 'Excellente conductrice, très professionnelle', 5, 5, 5, CURRENT_DATE - INTERVAL '8 days'),
 -- Nassim note Yacine
-(10, 10, 4, 4, 'Bon trajet, quelques retards mineurs', 4, 5, 5),
--- Yacine note Nassim
-(10, 4, 10, 5, 'Excellent passager', 5, 5, NULL);
+(10, 10, 4, 4, 'Bon trajet, quelques retards mineurs', 4, 5, 5, CURRENT_DATE - INTERVAL '7 days'),
+-- Samia note Sarah (trajet actif, test applicatif)
+(4, 11, 5, 5, 'Conductrice sérieuse et très ponctuelle.', 5, 5, 5, CURRENT_TIMESTAMP - INTERVAL '2 hours'),
+-- Amina note Fatima (trajet actif, test applicatif)
+(2, 7, 3, 5, 'Trajet agréable, conduite fluide.', 5, 5, 5, CURRENT_TIMESTAMP - INTERVAL '1 hours');
 
 -- ========================================
 -- 11. CONVERSATIONS
