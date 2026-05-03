@@ -1,0 +1,190 @@
+.st-profile {
+  max-width: 600px;
+}
+
+.st-profile__card {
+  background: #fff;
+  border-radius: 20px;
+  border: 2px solid var(--st-navy);
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  box-shadow: 0 4px 24px rgba(15, 24, 128, 0.08);
+}
+
+.st-profile__avatar-wrap {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 3px solid var(--st-navy);
+  box-shadow: 0 4px 12px rgba(15, 24, 128, 0.2);
+}
+
+.st-profile__avatar-placeholder {
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, #3b82f6, #1d4ed8);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.st-profile__avatar-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.st-profile__name {
+  margin: 0;
+  font-size: 1.4rem;
+  font-weight: 800;
+  color: var(--st-navy);
+  letter-spacing: -0.02em;
+}
+
+.st-profile__stats {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  width: 100%;
+}
+
+.st-profile__stat {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: #f1f5f9;
+  border-radius: 12px;
+  padding: 0.65rem 1.25rem;
+  flex: 1;
+  border: 1px solid #e2e8f0;
+  transition: background 0.15s ease;
+}
+
+.st-profile__stat:hover {
+  background: #eff6ff;
+  border-color: #bfdbfe;
+}
+
+.st-profile__stat-value {
+  font-weight: 800;
+  font-size: 1.1rem;
+  color: var(--st-navy);
+}
+
+.st-profile__stat-label {
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  color: var(--st-muted);
+  margin-top: 2px;
+}
+
+.st-profile__roles {
+  display: flex;
+  gap: 0.5rem;
+  flex: 2;
+}
+
+.st-role-btn {
+  border: 2px solid #e2e8f0;
+  border-radius: 10px;
+  padding: 0.5rem 1.25rem;
+  font-weight: 700;
+  font-size: 0.82rem;
+  cursor: pointer;
+  background: #f1f5f9;
+  color: var(--st-muted);
+  transition: all 0.2s ease;
+  flex: 1;
+}
+
+.st-role-btn:hover {
+  border-color: var(--st-navy);
+  color: var(--st-navy);
+}
+
+.st-role-btn--active-passenger {
+  background: var(--st-navy);
+  color: white;
+  border-color: var(--st-navy);
+  box-shadow: 0 2px 8px rgba(15, 24, 128, 0.25);
+}
+
+.st-role-btn--active-driver {
+  background: #f97316;
+  color: white;
+  border-color: #f97316;
+  box-shadow: 0 2px 8px rgba(249, 115, 22, 0.25);
+}
+
+.st-profile__about {
+  background: linear-gradient(135deg, #dbeafe, #eff6ff);
+  border-radius: 14px;
+  padding: 1.25rem;
+  text-align: center;
+  color: var(--st-navy);
+  font-weight: 700;
+  border: 1px solid #bfdbfe;
+}
+
+.st-profile__about h3 {
+  margin: 0;
+  font-size: 1.1rem;
+}
+
+.st-profile__contact {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.st-profile__contact h3 {
+  margin: 0 0 0.5rem;
+  font-size: 1rem;
+  font-weight: 800;
+  color: var(--st-navy);
+}
+
+.st-profile__contact-item {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+  padding: 0.65rem 0.85rem;
+  border-radius: 12px;
+  border: 1px solid #e2e8f0;
+  transition: background 0.15s ease;
+}
+
+.st-profile__contact-item:hover {
+  background: #f8faff;
+  border-color: #bfdbfe;
+}
+
+.st-profile__contact-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.st-profile__contact-label {
+  display: block;
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  color: var(--st-muted);
+}
+
+.st-profile__contact-value {
+  display: block;
+  font-weight: 600;
+  color: var(--st-text);
+  font-size: 0.95rem;
+}
